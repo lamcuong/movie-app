@@ -63,3 +63,15 @@ export const dangKyNguoiDung = (thongTinDangKy, navigate) => {
         }
     }
 }
+export const capNhatThongTinNguoiDungAction = (thongTinCapNhat) => {
+    return async (dispatch) => {
+        try {
+            const result = await quanLyNguoiDungServices.capNhatThongTinNguoiDung(thongTinCapNhat)
+            alert("Cập nhật thông tin thành công")
+
+            console.log({ result })
+        } catch (err) {
+            console.log(err.response.data)
+        }
+    }
+}

@@ -18,6 +18,7 @@ import Films from './pages/Admin/Films/Films';
 import AddNew from './pages/Admin/Films/AddNew/AddNew'
 import EditFilm from './pages/Admin/Films/EditFilm/EditFilm';
 import Showtime from './pages/Admin/ShowTime/Showtime';
+import Profile from './pages/Profile/Profile';
 
 function App() {
 
@@ -46,7 +47,7 @@ function App() {
           <Route path='admin/films/edit/:id' element={<EditFilm />} />
           <Route path='admin/films/showtime/:maphim/:tenphim' element={<Showtime />} />
         </Route>
-
+        <Route path='/profile' element={<Profile />} />
       </Routes>
     </>
   );

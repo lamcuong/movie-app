@@ -26,7 +26,7 @@ export default function Header() {
         }
 
         return <p className='flex justify-center items-center'>
-            Xin chào ! {userLogin.hoTen}
+            Xin chào!  <NavLink to='/profile' className='ml-2 text-white underline'>   {userLogin.hoTen}</NavLink>
         </p>
 
 
