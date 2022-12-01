@@ -2,9 +2,10 @@ import React from 'react'
 import { useFormik } from 'formik';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { dangNhapAction } from '../../redux/actions/QuanLyNguoiDungActions';
+import { dangKyNguoiDung, dangNhapAction } from '../../redux/actions/QuanLyNguoiDungActions';
 import { GROUPID } from '../../util/settings/config';
 import * as Yup from 'yup'
+import { values } from 'lodash';
 
 export default function SignUp(props) {
 
@@ -24,8 +25,11 @@ export default function SignUp(props) {
             hoTen: Yup.string().required("Nhập họ tên!"),
             soDt: Yup.number().typeError("Số điện thoại không đúng!").required("Nhập số điện thoại!"),
             email: Yup.string().required("Nhập email!").email('Email không hợp lệ!'),
-            matKhau: Yup.string().min(6, 'Mật khẩu phải từ 6 đến 32 kí tự!').max(32, "Mật khẩu phải từ 6 đến 32 kí tự!")
-        })
+            matKhau: Yup.string().min(6, 'Mật khẩu phải từ 6 đến 32 kí tự!').max(32, "Mật khẩu phải từ 6 đến 32 kí tự!").required("Nhập mật khẩu!")
+        }),
+        onSubmit: values => {
+            dispatch(dangKyNguoiDung(values, navigate))
+        }
 
 
 
@@ -64,8 +68,10 @@ export default function SignUp(props) {
                                 </div>
 
                             </div>
-                            <input onChange={formik.handleChange} name='matKhau' className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type='password' />
-                            {formik.values.matKhau && formik.errors.matKhau ? <div className='text-red-500'>{formik.errors.matKhau}</div> : ''}
+                            <input onBlur={formik.handleBlur} onChange={formik.handleChange} name='matKhau' className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type='password' />
+                            {formik.touched.matKhau && formik.errors.matKhau ? <div className='text-red-500'>{formik.errors.matKhau}</div> : null}
+
+
                         </div>
 
                         <div className="mt-8">
@@ -75,8 +81,8 @@ export default function SignUp(props) {
                                 </div>
 
                             </div>
-                            <input onChange={formik.handleChange} name='hoTen' className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" />
-                            {formik.values.hoTen && formik.errors.hoTen ? <div className='text-red-500'>{formik.errors.hoTen}</div> : ''}
+                            <input onBlur={formik.handleBlur} onChange={formik.handleChange} name='hoTen' className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" />
+                            {formik.touched.hoTen && formik.errors.hoTen ? <div className='text-red-500'>{formik.errors.hoTen}</div> : null}
                         </div>
 
                         <div className="mt-8">
@@ -87,9 +93,11 @@ export default function SignUp(props) {
 
 
                             </div>
-                            <input onChange={formik.handleChange} name='email' className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" />
+                            <input onBlur={formik.handleBlur} onChange={formik.handleChange} name='email' className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" />
 
-                            {formik.values.email && formik.errors.email ? <div className='text-red-500'>{formik.errors.email}</div> : ''}
+                            {formik.touched.email && formik.errors.email ? <div className='text-red-500'>{formik.errors.email}</div> : null}
+                            {console.log('formik.touched.email', formik.touched.soDt)}
+                            {console.log('formik.errors.email', formik.errors.soDt)}
 
 
                         </div>
@@ -101,8 +109,8 @@ export default function SignUp(props) {
                                 </div>
 
                             </div>
-                            <input onChange={formik.handleChange} name='soDT' className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" />
-                            {formik.values.soDt && formik.errors.soDt ? <div className='text-red-500'>{formik.errors.soDt}</div> : ''}
+                            <input onBlur={formik.handleBlur} onChange={formik.handleChange} name='soDt' className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" />
+                            {formik.touched.soDt && formik.errors.soDt ? <div className='text-red-500'>{formik.errors.soDt}</div> : null}
                         </div>
                         <div className="mt-10">
                             <button type="submit" className="bg-indigo-500 text-gray-100 p-4 w-full rounded-full tracking-wide

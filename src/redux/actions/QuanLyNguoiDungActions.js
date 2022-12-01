@@ -16,18 +16,18 @@ export const dangNhapAction = (thongTinDangNhap, navigate) => {
 
             const result = await quanLyNguoiDungServices.dangNhap(thongTinDangNhap)
             console.log({ result })
-            if (result.status === 200) {
 
-                dispatch({
-                    type: DANG_NHAP,
-                    thongTinNguoiDung: result.data.content
-                })
-                navigate(-1, '/')
 
-            }
+            dispatch({
+                type: DANG_NHAP,
+                thongTinNguoiDung: result.data.content
+            })
+            navigate(-1)
+
+
 
         } catch (err) {
-            document.getElementById("err").innerHTML = err.response.data.content
+            document.getElementById('errDangNhap').innerHTML = err.response.data.content
 
         }
     }
@@ -38,15 +38,28 @@ export const layThongTinNguoiDung = () => {
     return async (dispatch) => {
         try {
             const result = await quanLyNguoiDungServices.layThongTinNguoiDung()
-            if (result.status === 200) {
-                dispatch({
-                    type: LAY_THONG_TIN_NGUOI_DUNG,
-                    thongTinNguoiDung: result.data.content
-                })
-            }
+
+            dispatch({
+                type: LAY_THONG_TIN_NGUOI_DUNG,
+                thongTinNguoiDung: result.data.content
+            })
+
 
         } catch (err) {
             console.log(err)
+        }
+    }
+}
+
+export const dangKyNguoiDung = (thongTinDangKy, navigate) => {
+    return async () => {
+        try {
+            const result = await quanLyNguoiDungServices.dangKy(thongTinDangKy)
+            alert('Đăng ký thành công!')
+            navigate(-1)
+
+        } catch (err) {
+            alert(err.response.data.content)
         }
     }
 }

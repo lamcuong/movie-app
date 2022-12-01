@@ -7,12 +7,12 @@ export const layDanhSachPhongVe = (maLichChieu) => {
         try {
             const result = await quanLyDatVeServices.layDanhSachPhongVe(maLichChieu)
 
-            if (result.status === 200) {
-                dispatch({
-                    type: LAY_DANH_SACH_PHONG_VE,
-                    chiTietPhongVe: result.data.content
-                })
-            }
+
+            dispatch({
+                type: LAY_DANH_SACH_PHONG_VE,
+                chiTietPhongVe: result.data.content
+            })
+
         } catch (err) {
             console.log(err)
         }
@@ -25,16 +25,16 @@ export const actionDatVe = (thongTinDatVe) => {
         try {
             dispatch({ type: OPEN_LOADING })
             const result = await quanLyDatVeServices.actionDatVe(thongTinDatVe)
-            if (result.status === 200) {
-                await dispatch(layDanhSachPhongVe(thongTinDatVe.maLichChieu))
-                dispatch({ type: DAT_VE_HOAN_TAT })
-                dispatch({ type: HIDE_LOADING })
-                dispatch({
-                    type: CHUYEN_TAB,
-                    activeTab: '2'
-                })
 
-            }
+            await dispatch(layDanhSachPhongVe(thongTinDatVe.maLichChieu))
+            dispatch({ type: DAT_VE_HOAN_TAT })
+            dispatch({ type: HIDE_LOADING })
+            dispatch({
+                type: CHUYEN_TAB,
+                activeTab: '2'
+            })
+
+
 
         }
         catch (err) {

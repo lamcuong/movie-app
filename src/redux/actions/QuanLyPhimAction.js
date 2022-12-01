@@ -10,8 +10,7 @@ export const layDanhSachPhimAction = (tenPhim = '') => {
                 type: GET_DANH_SACH_PHIM,
                 arrFilm: result.data.content
             })
-            console.log({ result })
-            console.log({ tenPhim })
+
         } catch (err) {
             console.log(err)
         }
@@ -23,10 +22,10 @@ export const themPhimUploadHinh = (formData, navigate) => {
     return async (dispatch) => {
         try {
             const result = await quanLyPhimServices.themPhimUploadHinh(formData)
-            if (result.status === 200) {
-                alert("Thêm phim thành công ")
-                navigate('/admin/films')
-            }
+
+            alert("Thêm phim thành công ")
+            navigate('/admin/films')
+
 
         } catch (err) {
             console.log(err)
@@ -39,12 +38,12 @@ export const layThongTinPhim = (maPhim) => {
         try {
             const result = await quanLyPhimServices.layThongTinPhim(maPhim)
             console.log({ result })
-            if (result.status === 200) {
-                dispatch({
-                    type: LAY_THONG_TIN_EDIT_PHIM,
-                    thongTinPhimEdit: result.data.content
-                })
-            }
+
+            dispatch({
+                type: LAY_THONG_TIN_EDIT_PHIM,
+                thongTinPhimEdit: result.data.content
+            })
+
         } catch (err) {
             console.log(err)
         }

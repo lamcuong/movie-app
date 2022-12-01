@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { dangNhapAction } from '../../redux/actions/QuanLyNguoiDungActions';
 
 export default function Login(props) {
-
+    const errDangNhap = ''
     const dispatch = useDispatch()
     const navigate = useNavigate();
     const formik = useFormik({
@@ -18,7 +18,7 @@ export default function Login(props) {
 
             dispatch(dangNhapAction(values, navigate))
 
-            console.log({ values })
+
         },
     });
 
@@ -61,7 +61,7 @@ export default function Login(props) {
                                 </div>
                             </div>
                             <input onChange={formik.handleChange} name='matKhau' className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type='password' placeholder="Nhập mật khẩu" />
-                            <div id='err' className='text-red-500 mt-4'>  </div>
+                            <div id='errDangNhap' className='text-red-500 mt-4'>  </div>
                         </div>
                         <div className="mt-10">
                             <button type="submit" className="bg-indigo-500 text-gray-100 p-4 w-full rounded-full tracking-wide
