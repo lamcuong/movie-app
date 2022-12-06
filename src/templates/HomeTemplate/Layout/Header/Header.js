@@ -1,4 +1,4 @@
-import { Dropdown } from 'flowbite-react'
+
 
 import _ from 'lodash'
 import React, { Fragment } from 'react'
@@ -50,21 +50,6 @@ export default function Header() {
             <div className="container flex justify-between h-16 mx-auto">
 
 
-                <Dropdown label="Dropdown button">
-                    <Dropdown.Item>
-                        Dashbofefedfgdfgard123
-                    </Dropdown.Item>
-                    <Dropdown.Item>
-                        Settings
-                    </Dropdown.Item>
-                    <Dropdown.Item>
-                        Earnings
-                    </Dropdown.Item>
-                    <Dropdown.Divider />
-                    <Dropdown.Item>
-                        Separated link
-                    </Dropdown.Item>
-                </Dropdown>
 
 
 

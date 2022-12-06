@@ -76,7 +76,7 @@ export default function SignUp(props) {
                                 </div>
 
                             </div>
-                            <input type='password' onBlur={formik.handleBlur} onChange={formik.handleChange} name='matKhau' className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-none" />
+                            <input type='password' onBlur={formik.handleBlur} onChange={formik.handleChange} name='matKhau' className="w-full border-x-0 border-t-0 text-lg py-2 border-b focus:ring-0 border-gray-300  focus:outline-none focus:border-indigo-500" />
                             {formik.touched.hoTen && formik.errors.hoTen ? <div className='text-red-500'>{formik.errors.hoTen}</div> : null}
 
 

@@ -10,7 +10,7 @@ import 'antd/dist/antd.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
-import 'flowbite';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
