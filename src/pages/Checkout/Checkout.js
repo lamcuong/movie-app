@@ -13,7 +13,7 @@ import { ThongTinDatVe } from '../../_core/models/ThongTinDatVe'
 import { layThongTinNguoiDung } from '../../redux/actions/QuanLyNguoiDungActions'
 import moment from 'moment'
 import { render } from 'react-dom'
-import { TOKEN, USER_LOGIN } from '../../util/settings/config'
+import { MA_NGUOI_DUNG, TOKEN, USER_LOGIN } from '../../util/settings/config'
 function Checkout() {
 
     const dispatch = useDispatch()
@@ -177,23 +177,24 @@ export default function () {
     const { userLogin } = useSelector(state => state.QuanLyNguoiDungReducer)
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const operations = <div className=''>
-        <button className='text-center'>
-            <div className='w-14 h-14 ml-8  bg-pink-500 rounded-full flex justify-center items-center text-3xl text-white'> {userLogin.taiKhoan.substr(0, 1)}</div>
-            <div className='mt-3'>
+    const operations = <div className='mr-10'>
+        <p className='text-center  '>
+
+            <div className='mt-3 text-lg'>
                 <span> Xin chào! <span className='font-bold'>{userLogin.hoTen}</span> </span>
             </div>
 
 
 
-        </button>
-        <button onClick={() => {
+        </p>
+        <p onClick={() => {
 
             localStorage.removeItem(USER_LOGIN)
             localStorage.removeItem(TOKEN)
+            localStorage.removeItem(MA_NGUOI_DUNG)
             navigate('/')
             window.location.reload();
-        }} className='text-blue-700 text-lg font-semibold'>Đăng xuất</button>
+        }} className='text-blue-700 text-lg font-semibold text-center cursor-pointer'>Đăng xuất</p>
 
     </div>;
     console.log({ userLogin })
@@ -249,7 +250,10 @@ export default function () {
 function KetQuaDatVe() {
     const { thongTinNguoiDung } = useSelector(state => state.QuanLyNguoiDungReducer)
     const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(layThongTinNguoiDung())
 
+    }, [])
     const renderThongTinDatVe = () => {
         return thongTinNguoiDung.thongTinDatVe.map((thongTin, index) => {
             const renderGhe = () => {
@@ -273,10 +277,7 @@ function KetQuaDatVe() {
             </div>
         })
     }
-    useEffect(() => {
-        dispatch(layThongTinNguoiDung())
-        console.log('s')
-    }, [])
+
     return (
         <section className="text-gray-600 body-font">
             <div className="container px-5 py-24 mx-auto">

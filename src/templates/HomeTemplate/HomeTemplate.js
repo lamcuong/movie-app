@@ -13,6 +13,7 @@ export default function HomeTemplate() {
         <div>
             <div>
                 <Header />
+
             </div>
             <div>
                 {/* <HomeCarousel /> */}

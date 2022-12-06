@@ -28,6 +28,7 @@ export const themPhimUploadHinh = (formData, navigate) => {
 
 
         } catch (err) {
+            alert(err.response.data.content)
             console.log(err)
         }
     }

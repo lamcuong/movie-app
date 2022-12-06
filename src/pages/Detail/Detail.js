@@ -113,16 +113,7 @@ export default function Detail(props) {
                                     })}
                                 />,
                             },
-                            {
-                                label: <span className='text-xl'> Thông Tin</span>,
-                                key: '2',
-                                children: `Content of Tab Pane 2`,
-                            },
-                            {
-                                label: <span className='text-xl'> Đánh Giá</span>,
-                                key: '3',
-                                children: `Content of Tab Pane 3`,
-                            },
+
                         ]}
 
 

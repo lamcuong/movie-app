@@ -62,14 +62,22 @@ export default function SignUp(props) {
                             <input name='taiKhoan' onChange={formik.handleChange} className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" />
                         </div>
                         <div className="mt-8">
-                            <div className="flex justify-between items-center">
+                            {/* <div className="flex justify-between items-center">
                                 <div className="text-sm font-bold text-gray-700 tracking-wide">
                                     Mật khẩu
                                 </div>
 
                             </div>
                             <input onBlur={formik.handleBlur} onChange={formik.handleChange} name='matKhau' className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type='password' />
-                            {formik.touched.matKhau && formik.errors.matKhau ? <div className='text-red-500'>{formik.errors.matKhau}</div> : null}
+                            {formik.touched.matKhau && formik.errors.matKhau ? <div className='text-red-500'>{formik.errors.matKhau}</div> : null} */}
+                            <div className="flex justify-between items-center">
+                                <div className="text-sm font-bold text-gray-700 tracking-wide">
+                                    Mật khẩu
+                                </div>
+
+                            </div>
+                            <input type='password' onBlur={formik.handleBlur} onChange={formik.handleChange} name='matKhau' className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-none" />
+                            {formik.touched.hoTen && formik.errors.hoTen ? <div className='text-red-500'>{formik.errors.hoTen}</div> : null}
 
 
                         </div>

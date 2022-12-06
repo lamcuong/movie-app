@@ -60,7 +60,7 @@ export default function Login(props) {
                                     </a>
                                 </div>
                             </div>
-                            <input onChange={formik.handleChange} name='matKhau' className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type='password' placeholder="Nhập mật khẩu" />
+                            <input onChange={formik.handleChange} name='matKhau' className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type='text' placeholder="Nhập mật khẩu" />
                             <div id='errDangNhap' className='text-red-500 mt-4'>  </div>
                         </div>
                         <div className="mt-10">

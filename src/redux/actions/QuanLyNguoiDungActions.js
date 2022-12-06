@@ -1,7 +1,7 @@
 import React from "react"
 import { redirect, useNavigate } from "react-router-dom"
 import { QuanLyNguoiDung, quanLyNguoiDungServices } from "../../services/QuanLyNguoiDungServices"
-import { DANG_NHAP, LAY_THONG_TIN_NGUOI_DUNG } from "./types/QuanLyNguoiDungTypes"
+import { DANG_NHAP, LAY_DANH_SACH_NGUOI_DUNG, LAY_THONG_TIN_NGUOI_DUNG, TIM_KIEM_NGUOI_DUNG } from "./types/QuanLyNguoiDungTypes"
 
 
 export const dangNhapAction = (thongTinDangNhap, navigate) => {
@@ -67,11 +67,52 @@ export const capNhatThongTinNguoiDungAction = (thongTinCapNhat) => {
     return async (dispatch) => {
         try {
             const result = await quanLyNguoiDungServices.capNhatThongTinNguoiDung(thongTinCapNhat)
+
             alert("Cập nhật thông tin thành công")
 
             console.log({ result })
         } catch (err) {
-            console.log(err.response.data)
+            alert(err.response.data.content)
         }
+    }
+}
+export const layDanhSachNguoiDung = (tuKhoa) => {
+    return async dispatch => {
+        try {
+            const result = await quanLyNguoiDungServices.layDanhSachNguoiDung(tuKhoa)
+            dispatch({
+                type: LAY_DANH_SACH_NGUOI_DUNG,
+                danhSachNguoiDung: result.data.content
+            })
+
+        } catch (err) {
+            console.log(err)
+        }
+    }
+}
+export const themNguoiDungAction = (thongTinThemNguoiDung) => {
+    return async dispatch => {
+        try {
+            const result = await quanLyNguoiDungServices.themNguoiDung(thongTinThemNguoiDung)
+            console.log({ result })
+            alert('Thêm người dùng thành công!')
+            dispatch(layDanhSachNguoiDung())
+        } catch (err) {
+            alert(err.response.data.content)
+            console.log(err.response.data.content)
+        }
+    }
+}
+export const xoaNguoiDungAction = (taiKhoanXoa) => {
+    return async dispatch => {
+        try {
+            const result = await quanLyNguoiDungServices.xoaNguoiDung(taiKhoanXoa)
+            alert('Xóa thành công!')
+            dispatch(layDanhSachNguoiDung())
+
+        } catch (err) {
+            alert(err.response.data.content)
+        }
+
     }
 }

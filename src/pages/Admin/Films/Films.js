@@ -107,7 +107,7 @@ export default function Films() {
                 <Button onClick={() => {
                     navigate('/admin/films/addnew')
                 }}>Thêm phim</Button>
-                <Search className='mt-3' placeholder="input search text" onSearch={onSearch} enterButton />
+                <Search className='mt-3' placeholder="Nhập tên phim" onSearch={onSearch} enterButton />
 
 
             </div >

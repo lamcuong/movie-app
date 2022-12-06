@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Checkbox, Form, Input, Select, DatePicker, InputNumber } from 'antd';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { quanLyRapService } from '../../../services/QuanLyRapService';
 import { useFormik } from 'formik';
 import moment from 'moment';
 import { quanLyDatVeServices } from '../../../services/QuanLyDatVeServices';
 
 export default function Showtime() {
+    const navigate = useNavigate()
     const params = useParams();
     const formik = useFormik({
         initialValues: {
@@ -21,6 +22,8 @@ export default function Showtime() {
             try {
                 const result = await quanLyDatVeServices.taoLichChieu(values)
                 console.log({ result })
+                alert('Tạo lịch chiếu thành công!')
+                navigate('/admin/films')
             } catch (err) {
                 console.log(err)
             }
