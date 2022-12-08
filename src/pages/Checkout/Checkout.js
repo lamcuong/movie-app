@@ -14,6 +14,7 @@ import { layThongTinNguoiDung } from '../../redux/actions/QuanLyNguoiDungActions
 import moment from 'moment'
 import { render } from 'react-dom'
 import { MA_NGUOI_DUNG, TOKEN, USER_LOGIN } from '../../util/settings/config'
+import Avatar from '../../components/Avatar/Avatar'
 function Checkout() {
 
     const dispatch = useDispatch()
@@ -177,26 +178,22 @@ export default function () {
     const { userLogin } = useSelector(state => state.QuanLyNguoiDungReducer)
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const operations = <div className='mr-10'>
-        <p className='text-center  '>
+    const operations =
 
-            <div className='mt-3 text-lg'>
-                <span> Xin chào! <span className='font-bold'>{userLogin.hoTen}</span> </span>
+
+        <div className='' style={{ minWidth: '500px' }}>
+            <div className=''>
+                <Avatar />
             </div>
+            {/* <span> Xin chào! <span className='font-bold'>{userLogin.hoTen}</span> </span> */}
+
+        </div>
 
 
 
-        </p>
-        <p onClick={() => {
 
-            localStorage.removeItem(USER_LOGIN)
-            localStorage.removeItem(TOKEN)
-            localStorage.removeItem(MA_NGUOI_DUNG)
-            navigate('/')
-            window.location.reload();
-        }} className='text-blue-700 text-lg font-semibold text-center cursor-pointer'>Đăng xuất</p>
 
-    </div>;
+
     console.log({ userLogin })
     useEffect(() => {
         return () => {
@@ -207,7 +204,7 @@ export default function () {
         }
     }, [])
     return (
-        <div className='p-5 '>
+        <div className='p-5 bg-yellow-50'>
 
 
             <Tabs

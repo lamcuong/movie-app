@@ -7,6 +7,7 @@ export default function HomeMenu(props) {
 
     console.log('ee', props.heThongRapChieu)
     return (
+
         <Tabs
             tabPosition='left'
             items={props.heThongRapChieu.map((heThongRap, index) => {

@@ -13,6 +13,7 @@ import { useSelector } from 'react-redux';
 import { MA_NGUOI_DUNG, TOKEN, USER_LOGIN } from '../../util/settings/config';
 import _ from 'lodash';
 import SubMenu from 'antd/lib/menu/SubMenu';
+import Avatar from '../../components/Avatar/Avatar';
 const { Header, Content, Footer, Sider } = Layout;
 function getItem(label, key, icon, children) {
     return {
@@ -58,17 +59,9 @@ const AdminTemplate = () => {
         setCollapsed(collapsed);
     };
 
-    const operations = <Fragment>
-        {!_.isEmpty(userLogin) ? <Fragment> <button onClick={() => {
-            navigate('profile')
-        }}> Hello ! {userLogin.taiKhoan}</button> <button onClick={() => {
-            localStorage.removeItem(USER_LOGIN);
-            localStorage.removeItem(TOKEN);
-            localStorage.removeItem(MA_NGUOI_DUNG);
-            navigate('/');
-            window.location.reload();
-        }} className="text-blue-800 ml-5" >Đăng xuất</button> </Fragment> : ''}
-    </Fragment>
+    const operations = <div className=''>
+        <Avatar />
+    </div>
     // console.log('localStorage[MA_NGUOI_DUNG]', localStorage[MA_NGUOI_DUNG])
 
     return (
@@ -86,9 +79,9 @@ const AdminTemplate = () => {
                     </Menu>
                 </Sider>
                 <Layout className="site-layout">
-                    <Header className="site-layout-background" style={{ padding: 0, backgroundColor: 'white' }} >
-                        <div className="text-right pr-10 pt-1">{operations}</div>
-                    </Header>
+                    <header className="" style={{ padding: 0, backgroundColor: 'white' }} >
+                        <div className=" pr-10 pt-1">{operations}</div>
+                    </header>
                     <Content style={{ margin: '0 16px' }}>
                         <Breadcrumb style={{ margin: '16px 0' }}>
                             {/* <Breadcrumb.Item>User</Breadcrumb.Item>

@@ -20,7 +20,7 @@ import Showtime from './pages/Admin/ShowTime/Showtime';
 import Profile from './pages/Profile/Profile';
 import QuanLyNguoiDung from './pages/Admin/QuanLyNguoiDung/QuanLyNguoiDung';
 import CapNhatNguoiDung from './pages/Admin/QuanLyNguoiDung/CapNhatNguoiDung';
-
+import Demo from './Demo';
 
 function App() {
 
@@ -52,7 +52,7 @@ function App() {
           <Route path='admin/user/edit/:taiKhoan' element={<CapNhatNguoiDung />} />
         </Route>
         <Route path='/profile' element={<Profile />} />
-
+        <Route path='/demo' element={<Demo />} />
       </Routes>
     </>
   );

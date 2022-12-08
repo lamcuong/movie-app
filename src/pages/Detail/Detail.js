@@ -34,13 +34,17 @@ export default function Detail(props) {
                             <img className='col-span-1' style={{ width: '100%', }} src={filmDetail.hinhAnh} alt="e" />
                             <div className='col-span-3 ml-5 my-auto text-white'>
                                 <p>Ngày chiếu: {moment(filmDetail.ngayKhoiChieu).format('DD.MM.YYYY')}</p>
-                                <p className='text-3xl '>{filmDetail.tenPhim}</p>
+                                <p className='text-3xl mb-1 '>{filmDetail.tenPhim}</p>
+                                <div className='mb-5' >
+                                    <span className=" mr-10"><Rate allowHalf className='text-2xl' value={filmDetail.danhGia / 2} /></span>
+                                    <span className=' text-xl'> ( {filmDetail.danhGia} / 10 )</span>
+                                </div>
                                 <p className='my-2'>{filmDetail.moTa}</p>
                             </div>
                         </div>
 
                     </div>
-                    <div className="col-span-4">
+                    {/* <div className="col-span-4">
                         <h1 style={{ marginLeft: '10%', color: 'yellow', fontWeight: 'bold', fontSize: 15 }}>Đánh giá</h1>
                         <h1 style={{ marginLeft: '3%' }} className="text-green-400 text-2xl"><Rate allowHalf value={filmDetail.danhGia / 2} style={{ color: '#78ed78', fontSize: 30 }} /></h1>
                         <div className={`c100 p${filmDetail.danhGia * 10} big`}>
@@ -57,7 +61,7 @@ export default function Detail(props) {
                         </div>
                         <br />
 
-                    </div>
+                    </div> */}
                 </div>
                 <div className=' mt-20 grid grid-cols-12 '>
                     <Tabs
