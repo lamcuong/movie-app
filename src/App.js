@@ -31,6 +31,7 @@ function App() {
         <Route path='*' element={<Navigate to='/' />} ></Route>
         <Route path='/' element={<HomeTemplate />}>
           <Route path='/' element={<Home />} />
+          <Route path='/profile' element={<Profile />} />
 
           <Route index element={<Home />} />
           <Route path='detail/:id' element={<Detail />} />
@@ -51,7 +52,7 @@ function App() {
           <Route path='admin/films/showtime/:maphim/:tenphim' element={<Showtime />} />
           <Route path='admin/user/edit/:taiKhoan' element={<CapNhatNguoiDung />} />
         </Route>
-        <Route path='/profile' element={<Profile />} />
+
         <Route path='/demo' element={<Demo />} />
       </Routes>
     </>

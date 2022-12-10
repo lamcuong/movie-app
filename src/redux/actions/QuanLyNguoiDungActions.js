@@ -50,8 +50,10 @@ export const layThongTinNguoiDung = () => {
 
 
         } catch (err) {
-            alert(err.response.data.content)
+
+
             console.log(err)
+            dispatch({ type: HIDE_LOADING })
         }
         dispatch({ type: HIDE_LOADING })
     }

@@ -10,7 +10,7 @@ export default function HomeTemplate() {
         window.scrollTo(0, 0)
     })
     return (
-        <div>
+        <div >
             <div>
                 <Header />
 
@@ -19,8 +19,8 @@ export default function HomeTemplate() {
             <div>
                 <Outlet />
             </div>
-            <hr className='mt-5' />
-            <div>
+            <hr />
+            <div >
                 <Footer />
             </div>
 
