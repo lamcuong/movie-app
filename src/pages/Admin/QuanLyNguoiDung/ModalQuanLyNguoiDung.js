@@ -37,9 +37,9 @@ const App = ({ isModalOpen, setIsModalOpen, userInfo }) => {
         dispatch(themNguoiDungAction(values))
         handleOk()
 
-        console.log(values)
+
     }
-    console.log({ userInfo })
+
 
     return (<>
 

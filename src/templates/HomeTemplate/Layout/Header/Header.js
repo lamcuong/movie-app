@@ -11,14 +11,11 @@ import Avatar from '../../../../components/Avatar/Avatar'
 
 export default function Header() {
     const navigate = useNavigate()
-    const [open, setOpen] = useState(false);
+
     const { userLogin } = useSelector(state => state.QuanLyNguoiDungReducer)
-    const activeStyle = {
-        borderBottom: '2px solid white'
-    }
+
     const renderLogin = () => {
-        console.log(_.isEmpty(userLogin))
-        console.log({ userLogin })
+
         if (_.isEmpty(userLogin)) {
 
             return <div className="items-center flex-shrink-0 hidden lg:flex">
@@ -45,10 +42,8 @@ export default function Header() {
     return (
         <header className="p-4 dark:bg-gray-800 dark:text-gray-100 bg-black bg-opacity-40 w-full text-white fixed z-10">
             <div className="container flex justify-between h-16 mx-auto">
-                <a href='#' onClick={() => {
-                    navigate('/')
-                }} aria-label="Back to homepage" className="flex items-center p-2">
-                    <img src='https://cyberlearn.vn/wp-content/uploads/2020/03/cyberlearn-min-new-opt2.png' />
+                <a href='/' aria-label="Back to homepage" className="flex items-center p-2">
+                    <img src='https://cyberlearn.vn/wp-content/uploads/2020/03/cyberlearn-min-new-opt2.png' alt='...' />
                 </a>
 
                 {renderLogin()}

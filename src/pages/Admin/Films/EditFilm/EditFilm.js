@@ -48,7 +48,7 @@ const EditFilm = () => {
 
         },
         onSubmit: values => {
-            // console.log({ values })
+
             values.maNhom = GROUPID
             let formData = new FormData()
 
@@ -93,7 +93,7 @@ const EditFilm = () => {
             let reader = new FileReader();
             reader.readAsDataURL(file)
             reader.onload = (e) => {
-                console.log('e.target.result', e.target.result)
+
                 setImgSrc(e.target.result)
             }
 
@@ -105,7 +105,7 @@ const EditFilm = () => {
     };
 
 
-    console.log({ thongTinPhimEdit })
+
     return (
         <Form
             onSubmitCapture={formik.handleSubmit}

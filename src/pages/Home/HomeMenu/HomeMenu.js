@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 export default function HomeMenu(props) {
 
-    console.log('ee', props.heThongRapChieu)
+
     return (
 
         <Tabs
@@ -43,7 +43,7 @@ export default function HomeMenu(props) {
                                                         <p>{cumRap.diaChi}</p>
                                                         <div className='grid grid-cols-4 gap-4'>
                                                             {phim.lstLichChieuTheoPhim.slice(0, 4).map((lichChieu, index) => {
-                                                                // console.log({ lichChieu })
+
                                                                 return <NavLink className='text-xl text-green-400' to={`checkout/${lichChieu.maLichChieu}`} key={index}>{moment(lichChieu.ngayChieuGioChieu).format('hh:mm A')}</NavLink>
                                                             })}
                                                         </div>

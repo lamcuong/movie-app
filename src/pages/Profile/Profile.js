@@ -29,7 +29,7 @@ export default function Profile() {
         }
     })
 
-    console.log({ thongTinNguoiDung })
+
 
     return (
         <div className='container m-auto mt-32'>

@@ -81,27 +81,10 @@ const MultipleRowSlick = (props) => {
 
             }} className={`${styleSlick[activeClassSC]} px-8 py-3 font-semibold rounded dark:bg-gray-100 dark:text-gray-800 border text-gray-800 bg-white border-gray-800`}>PHIM SẮP CHIẾU</button>
             <Slider {...settings}>
-                {console.log({ arrFilm })}
+
                 {renderFilms()}
 
-                {/* <div>
-                        <h3>11</h3>
-                    </div>
-                    <div>
-                        <h3>12</h3>
-                    </div>
-                    <div>
-                        <h3>13</h3>
-                    </div>
-                    <div>
-                        <h3>14</h3>
-                    </div>
-                    <div>
-                        <h3>15</h3>
-                    </div>
-                    <div>
-                        <h3>16</h3>
-                    </div> */}
+
             </Slider>
         </div>
     );

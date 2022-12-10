@@ -18,19 +18,19 @@ export default function Showtime() {
 
         },
         onSubmit: async (values) => {
-            console.log({ values })
+
             try {
                 const result = await quanLyDatVeServices.taoLichChieu(values)
-                console.log({ result })
+
                 alert('Tạo lịch chiếu thành công!')
                 navigate('/admin/films')
             } catch (err) {
-                console.log(err)
+                alert(err.data.response.content)
             }
         }
     })
 
-    console.log({ params })
+
     const [state, setState] = useState({
         heThongRap: [],
         cumRap: []
@@ -46,7 +46,7 @@ export default function Showtime() {
                     heThongRap: result.data.content
                 })
             } catch (err) {
-                console.log(err)
+                alert(err.response.data.content)
             }
 
         }
@@ -71,9 +71,9 @@ export default function Showtime() {
                 ...state,
                 cumRap: result.data.content
             })
-            console.log(result)
+
         } catch (err) {
-            console.log(err.response.data)
+            alert(err.response.data.content)
         }
 
 

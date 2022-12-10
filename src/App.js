@@ -1,7 +1,7 @@
 
 import './App.css';
 import { createBrowserHostry } from 'history'
-import { Route, Router, Routes } from 'react-router-dom';
+import { Navigate, Route, Router, Routes } from 'react-router-dom';
 import HomeTemplate from './templates/HomeTemplate/HomeTemplate';
 import Home from './pages/Home/Home';
 
@@ -28,7 +28,7 @@ function App() {
     <>
       <Loading />
       <Routes>
-
+        <Route path='*' element={<Navigate to='/' />} ></Route>
         <Route path='/' element={<HomeTemplate />}>
           <Route path='/' element={<Home />} />
 

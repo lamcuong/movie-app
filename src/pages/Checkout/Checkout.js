@@ -27,7 +27,7 @@ function Checkout() {
         dispatch(layThongTinNguoiDung())
     }, [])
 
-    console.log({ thongTinNguoiDung })
+
     const renderGhe = () => {
         return chiTietPhongVe.danhSachGhe.map((ghe, index) => {
             let classGheVip = ghe.loaiGhe === 'Vip' ? 'gheVip' : ''
@@ -156,7 +156,7 @@ function Checkout() {
                             let thongTinDatVe = new ThongTinDatVe()
                             thongTinDatVe.maLichChieu = id
                             thongTinDatVe.danhSachVe = danhSachGheDangDat
-                            // console.log({ thongTinDatVe })
+
 
                             dispatch(actionDatVe(thongTinDatVe))
 
@@ -185,7 +185,7 @@ export default function () {
             <div className=''>
                 <Avatar />
             </div>
-            {/* <span> Xin chào! <span className='font-bold'>{userLogin.hoTen}</span> </span> */}
+
 
         </div>
 
@@ -194,7 +194,7 @@ export default function () {
 
 
 
-    console.log({ userLogin })
+
     useEffect(() => {
         return () => {
             dispatch({

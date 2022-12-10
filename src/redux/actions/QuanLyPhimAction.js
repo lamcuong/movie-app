@@ -12,6 +12,7 @@ export const layDanhSachPhimAction = (tenPhim = '') => {
             })
 
         } catch (err) {
+
             console.log(err)
         }
     }
@@ -38,7 +39,7 @@ export const layThongTinPhim = (maPhim) => {
     return async (dispatch) => {
         try {
             const result = await quanLyPhimServices.layThongTinPhim(maPhim)
-            console.log({ result })
+
 
             dispatch({
                 type: LAY_THONG_TIN_EDIT_PHIM,
@@ -61,6 +62,7 @@ export const capNhatPhim = (formData, navigate) => {
             dispatch(layDanhSachPhimAction())
 
         } catch (err) {
+            alert(err.response.data.content)
             console.log(err.response.data)
         }
     }
@@ -73,7 +75,7 @@ export const xoaPhim = (maPhim) => {
 
             dispatch(layDanhSachPhimAction())
         } catch (err) {
-
+            alert(err.response.data.content)
         }
     }
 }

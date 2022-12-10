@@ -23,7 +23,7 @@ export default function QuanLyNguoiDung() {
     }, [])
 
     const { danhSachNguoiDung } = useSelector(state => state.QuanLyNguoiDungReducer)
-    console.log({ danhSachNguoiDung })
+
     const columns = [
         {
             title: 'STT',
@@ -97,9 +97,7 @@ export default function QuanLyNguoiDung() {
             />
             <Table columns={columns} dataSource={danhSachNguoiDung} rowKey={'quanLyNguoiDung'} />
 
-            {/* <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
 
-            </Modal> */}
         </div>
     )
 }

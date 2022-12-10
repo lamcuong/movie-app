@@ -34,7 +34,7 @@ const AddNew = () => {
 
         },
         onSubmit: values => {
-            // console.log({ values })
+
             values.maNhom = GROUPID
             let formData = new FormData()
 

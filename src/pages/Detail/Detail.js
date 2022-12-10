@@ -18,15 +18,15 @@ export default function Detail(props) {
         dispatch(layThongTinChiTietPhim(id))
 
     }, [])
-    console.log('filmDetail', filmDetail)
+
     return (
         <div style={{ backgroundImage: `url(${filmDetail.hinhAnh})`, minHeight: '100vh' }}>
             <CustomCard
                 style={{ paddingTop: '150px', minHeight: '100vh' }}
-                effectColor="#black" // required
-                color="black" // default color is white
-                blur={20} // default blur value is 10px
-                borderRadius='0px' // default border radius value is 10px
+                effectColor="#black"
+                color="black"
+                blur={20} //
+                borderRadius='0px'
             >
                 <div className='grid grid-cols-12'>
                     <div className='col-span-5 col-start-3 '>
@@ -44,24 +44,7 @@ export default function Detail(props) {
                         </div>
 
                     </div>
-                    {/* <div className="col-span-4">
-                        <h1 style={{ marginLeft: '10%', color: 'yellow', fontWeight: 'bold', fontSize: 15 }}>Đánh giá</h1>
-                        <h1 style={{ marginLeft: '3%' }} className="text-green-400 text-2xl"><Rate allowHalf value={filmDetail.danhGia / 2} style={{ color: '#78ed78', fontSize: 30 }} /></h1>
-                        <div className={`c100 p${filmDetail.danhGia * 10} big`}>
-                            <span className="text-white">
 
-                                {filmDetail.danhGia * 10}%
-                            </span>
-                            <div className="slice">
-                                <div className="bar"></div>
-                                <div className="fill"></div>
-
-                            </div>
-
-                        </div>
-                        <br />
-
-                    </div> */}
                 </div>
                 <div className=' mt-20 grid grid-cols-12 '>
                     <Tabs

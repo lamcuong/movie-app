@@ -2,18 +2,19 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import _ from 'lodash'
 import { AppleOutlined, FacebookOutlined } from '@ant-design/icons'
+import { NavLink } from 'react-router-dom'
 export default function Footer() {
     const { heThongRapChieu } = useSelector(state => state.QuanLyRapReducer)
-    console.log('dd', heThongRapChieu)
+
     const arrHeThongRap = _.map(heThongRapChieu, (heThongRap) => _.pick(heThongRap, ['maHeThongRap', 'logo', 'tenHeThongRap']))
     return (
         <footer className="py-6 bg-coolGray-100 text-coolGray-900 bg-gray-800">
             <div className="container px-6 mx-auto space-y-6 divide-y divide-gray-400 md:space-y-12 divide-opacity-50">
                 <div className="grid grid-cols-12">
                     <div className="pb-6 col-span-full md:pb-0 md:col-span-6">
-                        <a href="#" className="flex justify-center space-x-3 md:justify-start text-black">
+                        <a href='/' className="flex justify-center space-x-3 md:justify-start text-black">
 
-                            <img src="https://cyberlearn.vn/wp-content/uploads/2020/03/cyberlearn-min-new-opt2.png" alt="cyberlearn.vn" />
+                            < img src="https://cyberlearn.vn/wp-content/uploads/2020/03/cyberlearn-min-new-opt2.png" alt="cyberlearn.vn" />
                         </a>
                     </div>
                     <div className="col-span-6 text-center md:text-left md:col-span-3">
@@ -52,7 +53,7 @@ export default function Footer() {
 
                 </div>
             </div>
-        </footer>
+        </footer >
 
     )
 }

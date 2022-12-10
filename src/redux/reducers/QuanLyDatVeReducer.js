@@ -30,12 +30,12 @@ export const QuanLyDatVeReducer = (state = stateDefault, action) => {
             }
 
             state.danhSachGheDangDat = danhSachGheCapNhat
-            console.log(state.danhSachGheDangDat)
+
             return { ...state }
         }
         case CHUYEN_TAB: {
             state.activeTab = action.activeTab
-            console.log('state.activeTab', state.activeTab)
+
             return { ...state }
         }
         case DAT_VE_HOAN_TAT: {

@@ -14,6 +14,7 @@ export const layDanhSachPhongVe = (maLichChieu) => {
             })
 
         } catch (err) {
+
             console.log(err)
         }
 
@@ -38,6 +39,7 @@ export const actionDatVe = (thongTinDatVe) => {
 
         }
         catch (err) {
+            alert(err.response.data.content)
             console.log(err)
             dispatch({ type: HIDE_LOADING })
         }

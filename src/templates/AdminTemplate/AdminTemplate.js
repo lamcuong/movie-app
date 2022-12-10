@@ -1,18 +1,14 @@
 import React, { Fragment, useState } from 'react';
 import {
-    DesktopOutlined,
     FileOutlined,
-    PieChartOutlined,
-    TeamOutlined,
     UserOutlined,
-
 } from '@ant-design/icons';
 import { Breadcrumb, Layout, Menu } from 'antd';
 import { Navigate, NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { MA_NGUOI_DUNG, TOKEN, USER_LOGIN } from '../../util/settings/config';
 import _ from 'lodash';
-import SubMenu from 'antd/lib/menu/SubMenu';
+
 import Avatar from '../../components/Avatar/Avatar';
 const { Header, Content, Footer, Sider } = Layout;
 function getItem(label, key, icon, children) {
@@ -28,11 +24,7 @@ function getItem(label, key, icon, children) {
 const items = [
 
     getItem(<NavLink to='admin/user'>User</NavLink>, '1', <UserOutlined />),
-    // getItem('User', 'sub1', <UserOutlined />, [
-    //     getItem('Tom', '3'),
-    //     getItem('Bill', '4'),
-    //     getItem('Alex', '5'),
-    //   ]),
+
     getItem('Films', 'sub2', <FileOutlined />, [
         getItem(<NavLink to='admin/films'>Phim</NavLink>, '2'),
         getItem(<NavLink to='admin/films/addnew'>Thêm phim mới</NavLink>, '3'),
@@ -50,19 +42,19 @@ const AdminTemplate = () => {
     const [collapsed, setCollapsed] = useState(false);
     const navigate = useNavigate();
     if (!localStorage.getItem(MA_NGUOI_DUNG)) {
-        console.log('sdfgsfdg')
+
         return <Navigate to='/' replace={true} />;
     }
 
     const onCollapse = collapsed => {
-        // console.log(collapsed);
+
         setCollapsed(collapsed);
     };
 
     const operations = <div className=''>
         <Avatar />
     </div>
-    // console.log('localStorage[MA_NGUOI_DUNG]', localStorage[MA_NGUOI_DUNG])
+
 
     return (
         <Fragment>

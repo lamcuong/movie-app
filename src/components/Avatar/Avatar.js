@@ -14,7 +14,7 @@ export default function Avatar() {
             if (e.path[0] !== dropdownRef.current) {
                 setOpen(false)
             }
-            console.log(e)
+
 
         }
         document.body.addEventListener('click', closeDropdown)
@@ -22,7 +22,7 @@ export default function Avatar() {
             document.body.removeEventListener('click', closeDropdown)
         }
     }, [])
-    console.log('rere')
+
     return (
         <div className=''>
             <div className=' relative flex flex-col items-center justify-center z-50  ' >
@@ -42,7 +42,7 @@ export default function Avatar() {
                         {localStorage.getItem(MA_NGUOI_DUNG) ? <NavLink to='/admin' onClick={() => {
                             setOpen(false)
                         }} className=' block  text-black  cursor-pointer text-lg pl-3 py-3 hover:bg-gray-300'><span><AiFillControl className='inline-block text-2xl mr-4' /></span>Quản lý</NavLink> : <li className='cursor-no-drop bg-gray-200 opacity-80 text-lg pl-3 py-3 '><span className='opacity-80'><AiFillControl className='inline-block text-2xl mr-4 opacity-80' /></span>Quản lý</li>}
-                        {/* <li className='cursor-pointer text-lg pl-3 py-3 hover:bg-gray-300'><span><AiFillControl className='inline-block text-2xl mr-4' /></span>Quản lý</li> */}
+
 
                         <li onClick={() => {
                             setOpen(false)

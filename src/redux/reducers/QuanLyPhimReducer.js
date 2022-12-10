@@ -68,7 +68,7 @@ export const QuanLyPhimReducer = (state = stateDefault, action) => {
         case LAY_THONG_TIN_CHI_TIET_PHIM: {
 
             state.filmDetail = action.dataFilm
-            console.log('state.arrFilm', state.filmDetail)
+
             return { ...state }
         }
         case LAY_THONG_TIN_EDIT_PHIM: {

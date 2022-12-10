@@ -16,6 +16,7 @@ export const getCarouselAction = () => {
 
 
         } catch (err) {
+            alert(err.response.data.content)
             console.log(err)
         }
     }

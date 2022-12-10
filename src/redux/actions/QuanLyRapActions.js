@@ -32,7 +32,7 @@ export const layThongTinChiTietPhim = (maPhim) => {
             })
 
         } catch (err) {
-
+            console.log(err)
         }
     }
 }

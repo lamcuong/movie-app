@@ -16,7 +16,7 @@ export const dangNhapAction = (thongTinDangNhap, navigate) => {
 
 
             const result = await quanLyNguoiDungServices.dangNhap(thongTinDangNhap)
-            console.log({ result })
+
 
 
             dispatch({
@@ -50,6 +50,7 @@ export const layThongTinNguoiDung = () => {
 
 
         } catch (err) {
+            alert(err.response.data.content)
             console.log(err)
         }
         dispatch({ type: HIDE_LOADING })
@@ -75,7 +76,7 @@ export const capNhatThongTinNguoiDungAction = (thongTinCapNhat) => {
 
             alert("Cập nhật thông tin thành công")
 
-            console.log({ result })
+
         } catch (err) {
             alert(err.response.data.content)
         }
@@ -91,6 +92,7 @@ export const layDanhSachNguoiDung = (tuKhoa) => {
             })
 
         } catch (err) {
+
             console.log(err)
         }
     }
@@ -99,7 +101,7 @@ export const themNguoiDungAction = (thongTinThemNguoiDung) => {
     return async dispatch => {
         try {
             const result = await quanLyNguoiDungServices.themNguoiDung(thongTinThemNguoiDung)
-            console.log({ result })
+
             alert('Thêm người dùng thành công!')
             dispatch(layDanhSachNguoiDung())
         } catch (err) {

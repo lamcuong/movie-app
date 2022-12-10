@@ -22,7 +22,7 @@ export default function CapNhatNguoiDung() {
     const onSubmit = (e) => {
         e.preventDefault()
         dispatch(capNhatThongTinNguoiDungAction(values))
-        console.log(values)
+
     }
 
 

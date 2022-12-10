@@ -11,17 +11,13 @@ import HomeMenu from './HomeMenu/HomeMenu'
 export default function Home(props) {
     const { arrFilm } = useSelector(state => state.QuanLyPhimReducer)
     const { heThongRapChieu } = useSelector(state => state.QuanLyRapReducer)
-    // const renderFilms = () => {
-    //     return arrFilm.map((phim, index) => {
-    //         return <Films key={index} />
-    //     })
-    // }
+
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(layDanhSachPhimAction())
         dispatch(layDanhSachHeThongRap())
     }, [])
-    console.log('heThongRapChieu', heThongRapChieu)
+
     return (
         <div>
             <HomeCarousel />

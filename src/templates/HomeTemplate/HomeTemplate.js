@@ -15,9 +15,7 @@ export default function HomeTemplate() {
                 <Header />
 
             </div>
-            <div>
-                {/* <HomeCarousel /> */}
-            </div>
+
             <div>
                 <Outlet />
             </div>
