@@ -36,7 +36,7 @@ const stateDefault = {
     arrFilmDefault: [
 
     ],
-    phimDangChieu: false,
+    phimDangChieu: true,
     phimSapChieu: false,
     filmDetail: {
 

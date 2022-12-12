@@ -61,8 +61,8 @@ const MultipleRowSlick = (props) => {
         nextArrow: <SampleNextArrow />,
         prevArrow: <SamplePrevArrow />,
     };
-    let activeClassDC = phimDangChieu === true ? 'active_Film' : 'none_active'
-    let activeClassSC = phimSapChieu === true ? 'active_Film' : 'none_active'
+    let activeClassDC = phimDangChieu === true ? 'active-film' : 'none-active'
+    let activeClassSC = phimSapChieu === true ? 'active-film' : 'none-active'
     console.log({ activeClassDC })
     return (
         <div>

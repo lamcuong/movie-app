@@ -10,10 +10,12 @@
     width: 100% !important;
 }
 
-.active_Film {
+.default-sapChieu {}
+
+.active-film {
     @apply bg-gray-800 text-white !important
 }
 
-.none_active {
+.none-active {
     @apply bg-white text-gray-800 border border-gray-800 !important
 }
