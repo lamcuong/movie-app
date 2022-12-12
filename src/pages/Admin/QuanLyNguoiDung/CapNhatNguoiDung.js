@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import { capNhatThongTinNguoiDungAction, layDanhSachNguoiDung } from '../../../redux/actions/QuanLyNguoiDungActions'
+import { LAY_DANH_SACH_NGUOI_DUNG } from '../../../redux/actions/types/QuanLyNguoiDungTypes'
+import { quanLyNguoiDungServices } from '../../../services/QuanLyNguoiDungServices'
 import { GROUPID } from '../../../util/settings/config'
 
 export default function CapNhatNguoiDung() {
@@ -9,12 +11,17 @@ export default function CapNhatNguoiDung() {
     const dispatch = useDispatch()
     const taiKhoanCapNhat = useParams()
     const { danhSachNguoiDung } = useSelector(state => state.QuanLyNguoiDungReducer)
-
+    const thongTinTaiKhoan = danhSachNguoiDung?.find(user => user.taiKhoan === taiKhoanCapNhat.taiKhoan)
     useEffect(() => {
-        dispatch(layDanhSachNguoiDung(''))
-    }, [])
+        dispatch(layDanhSachNguoiDung());
+        setValues({ ...values, ...thongTinTaiKhoan })
 
-    const thongTinTaiKhoan = danhSachNguoiDung.find(user => user.taiKhoan === taiKhoanCapNhat.taiKhoan)
+    }, [thongTinTaiKhoan?.taiKhoan])
+
+
+
+
+
 
     const onChange = (e) => {
         setValues({ ...values, [e.target.name]: e.target.value })
@@ -36,6 +43,8 @@ export default function CapNhatNguoiDung() {
         maLoaiNguoiDung: thongTinTaiKhoan?.maLoaiNguoiDung,
 
     })
+    console.log({ thongTinTaiKhoan })
+    console.log({ values })
     return (
         <form onSubmit={onSubmit} className='container m-auto'>
             <h1 className='text-center text-4xl'>Cập nhật người dùng</h1>
