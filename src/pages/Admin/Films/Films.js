@@ -73,14 +73,14 @@ export default function Films() {
             render: (text, film) => {
 
                 return <Fragment>
-                    <NavLink key={1} className="  text-2xl" to={`/admin/films/edit/${film.maPhim}`}><EditOutlined style={{ color: 'blue' }} /> </NavLink>
-                    <span onClick={() => {
+                    <NavLink key={1} title='Chỉnh sửa' className="  text-2xl" to={`/admin/films/edit/${film.maPhim}`}><EditOutlined style={{ color: 'blue' }} /> </NavLink>
+                    <span title='Xóa phim' onClick={() => {
                         if (window.confirm('Xác nhận xóa phim  ' + film.tenPhim)) {
                             dispatch(xoaPhim(film.maPhim))
                         }
 
                     }} key={2} className="text-2xl mx-2" ><DeleteOutlined style={{ color: 'red', cursor: 'pointer' }} /> </span>
-                    <NavLink key={3} className="   text-2xl" to={`/admin/films/showtime/${film.maPhim}/${film.tenPhim}`} onClick={() => {
+                    <NavLink key={3} title='Tạo lịch chiếu' className="   text-2xl" to={`/admin/films/showtime/${film.maPhim}/${film.tenPhim}`} onClick={() => {
                         localStorage.setItem('filmParams', JSON.stringify(film))
                     }}><CalendarOutlined style={{ color: 'green' }} /> </NavLink>
                 </Fragment>

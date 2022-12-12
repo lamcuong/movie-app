@@ -63,7 +63,7 @@ const MultipleRowSlick = (props) => {
     };
     let activeClassDC = phimDangChieu === true ? 'active_Film' : 'none_active'
     let activeClassSC = phimSapChieu === true ? 'active_Film' : 'none_active'
-
+    console.log({ activeClassDC })
     return (
         <div>
             <button type="button" onClick={() => {
@@ -72,14 +72,14 @@ const MultipleRowSlick = (props) => {
                     type: GET_PHIM_DANG_CHIEU
                 })
 
-            }} className={`${styleSlick[activeClassDC]} px-8 py-3 font-semibold rounded bg-gray-800 text-white mr-2 dark:bg-gray-100 dark:text-gray-800`}>PHIM ĐANG CHIẾU</button>
+            }} className={`${styleSlick[activeClassDC]} px-8 py-3 font-semibold rounded bg-gray-800 text-white mr-2`}>PHIM ĐANG CHIẾU</button>
             <button type="button" onClick={() => {
 
                 dispatch({
                     type: GET_PHIM_SAP_CHIEU
                 })
 
-            }} className={`${styleSlick[activeClassSC]} px-8 py-3 font-semibold rounded dark:bg-gray-100 dark:text-gray-800 border text-gray-800 bg-white border-gray-800`}>PHIM SẮP CHIẾU</button>
+            }} className={`${styleSlick[activeClassSC]} px-8 py-3 font-semibold rounded  text-gray-800 bg-white border-gray-800`}>PHIM SẮP CHIẾU</button>
             <Slider {...settings}>
 
                 {renderFilms()}
