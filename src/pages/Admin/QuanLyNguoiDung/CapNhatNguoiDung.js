@@ -43,8 +43,7 @@ export default function CapNhatNguoiDung() {
         maLoaiNguoiDung: thongTinTaiKhoan?.maLoaiNguoiDung,
 
     })
-    console.log({ thongTinTaiKhoan })
-    console.log({ values })
+
     return (
         <form onSubmit={onSubmit} className='container m-auto'>
             <h1 className='text-center text-4xl'>Cập nhật người dùng</h1>

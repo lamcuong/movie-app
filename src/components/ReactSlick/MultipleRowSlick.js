@@ -63,7 +63,7 @@ const MultipleRowSlick = (props) => {
     };
     let activeClassDC = phimDangChieu === true ? 'active-film' : 'none-active'
     let activeClassSC = phimSapChieu === true ? 'active-film' : 'none-active'
-    console.log({ activeClassDC })
+
     return (
         <div>
             <button type="button" onClick={() => {
